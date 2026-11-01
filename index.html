@@ -68,6 +68,27 @@
       background: #1d4ed8;
     }
 
+    .banner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 300px;
+      padding: 2rem;
+      background: #eff6ff;
+      color: #172554;
+      text-align: center;
+    }
+
+    .banner h1 {
+      margin: 0 0 0.75rem;
+    }
+
+    .banner p {
+      margin: 0;
+      color: #475569;
+    }
+
     @media (max-width: 600px) {
       .navbar {
         padding: 1rem;
@@ -95,5 +116,11 @@
       <button class="nav-button" type="button">Get started</button>
     </div>
   </nav>
+  <main>
+    <section class="banner" aria-labelledby="banner-heading">
+      <h1 id="banner-heading">Welcome to My Website</h1>
+      <p>Discover what we have to offer.</p>
+    </section>
+  </main>
 </body>
 </html>
