@@ -86,6 +86,50 @@
             background-color: #f1f5f9;
         }
 
+      
+        .top-bar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #2563eb;
+            color: white;
+            padding: 18px 25px;
+            font-size: 20px;
+        }
+
+        main {
+            padding: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border: 1px solid #cbd5e1;
+        }
+
+       
+        .plus-button {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            z-index: 2000;
+            width: 60px;
+            height: 60px;
+            border: none;
+            border-radius: 50%;
+            background: #16a34a;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px #0003;
+        }
+
+        .plus-button:hover {
+            background: #15803d;
+        }
+
         h1 {
             text-align: center;
             color: #243b64;
@@ -166,6 +210,64 @@
 .bio-box p {
     line-height: 1.6;
 }
+
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 18px 25px;
+            background-color: #2563eb;
+            color: white;
+        }
+
+        .site-title {
+            margin: 0;
+            font-size: 24px;
+        }
+
+     
+        .page-content {
+            padding: 25px;
+        }
+
+        .page-title {
+            text-align: center;
+        }
+
+      
+        .content-card {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            background-color: white;
+        }
+
+        .card-title {
+            margin-top: 0;
+            color: #2563eb;
+        }
+
+       
+        .add-button {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            z-index: 2000;
+            width: 60px;
+            height: 60px;
+            border: none;
+            border-radius: 50%;
+            background-color: #16a34a;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+        }
+
+        .add-button:hover {
+            background-color: #15803d;
+        }
     </style>
 </head>
 
@@ -220,5 +322,76 @@
         responsive layouts for different devices.
     </p>
 </div>
+
+<header class="top-bar">
+        My Website
+    </header>
+
+    <main>
+        <h1>Sticky and Fixed Position</h1>
+        <p>Scroll down to test the top bar and plus button.</p>
+
+        <div class="card">
+            <h2>Card 1</h2>
+            <p>This is sample website content.</p>
+        </div>
+
+        <div class="card">
+            <h2>Card 2</h2>
+            <p>The top bar stays at the top when scrolling.</p>
+        </div>
+
+        <div class="card">
+            <h2>Card 3</h2>
+            <p>The plus button stays fixed at the bottom-right.</p>
+        </div>
+
+        <div class="card">
+            <h2>Card 4</h2>
+            <p>Keep scrolling to test the sticky header.</p>
+        </div>
+
+        <div class="card">
+            <h2>Card 5</h2>
+            <p>The z-index controls which element appears in front.</p>
+        </div>
+    </main>
+
+    <button class="plus-button" type="button" aria-label="Add item">
+        +
+    </button>
+    <header class="site-header">
+        <h1 class="site-title">My Website</h1>
+    </header>
+
+    <main class="page-content">
+        <h2 class="page-title">Welcome to My Website</h2>
+
+        <section class="content-card">
+            <h3 class="card-title">About Us</h3>
+            <p>This is the first content card.</p>
+        </section>
+
+        <section class="content-card">
+            <h3 class="card-title">Our Services</h3>
+            <p>This is the second content card.</p>
+        </section>
+
+        <section class="content-card">
+            <h3 class="card-title">Our Projects</h3>
+            <p>This is the third content card.</p>
+        </section>
+
+        <section class="content-card">
+            <h3 class="card-title">Contact Us</h3>
+            <p>This is the fourth content card.</p>
+        </section>
+    </main>
+
+    <button
+        class="add-button"
+        type="button"
+        aria-label="Add item"
+    >+</button>
 </body>
 </html>
