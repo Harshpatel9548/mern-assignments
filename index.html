@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navbar</title>
+  <title>My Website | Home</title>
   <style>
     * {
       box-sizing: border-box;
@@ -14,17 +14,20 @@
       font-family: Arial, sans-serif;
     }
 
+    .hero {
+      background: linear-gradient(135deg, #172554, #2563eb);
+      color: #fff;
+    }
+
     .navbar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 1rem 2rem;
-      background: #fff;
-      box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
     }
 
     .logo {
-      color: #172554;
+      color: inherit;
       font-size: 1.4rem;
       font-weight: 700;
       text-decoration: none;
@@ -46,26 +49,26 @@
     }
 
     .nav-links a {
-      color: #334155;
+      color: rgb(255 255 255 / 85%);
       text-decoration: none;
     }
 
     .nav-links a:hover {
-      color: #2563eb;
+      color: #fff;
     }
 
     .nav-button {
       padding: 0.65rem 1rem;
       border: 0;
       border-radius: 6px;
-      background: #2563eb;
-      color: #fff;
+      background: #fff;
+      color: #1d4ed8;
       font: inherit;
       cursor: pointer;
     }
 
     .nav-button:hover {
-      background: #1d4ed8;
+      background: #dbeafe;
     }
 
     .banner {
@@ -73,10 +76,9 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 300px;
+      min-height: 380px;
       padding: 2rem;
-      background: #eff6ff;
-      color: #172554;
+      color: inherit;
       text-align: center;
     }
 
@@ -86,7 +88,8 @@
 
     .banner p {
       margin: 0;
-      color: #475569;
+      color: rgb(255 255 255 / 85%);
+      line-height: 1.6;
     }
 
     .card-row {
@@ -133,22 +136,24 @@
   </style>
 </head>
 <body>
-  <nav class="navbar" aria-label="Main navigation">
-    <a class="logo" href="#" aria-label="Acme home">My Website</a>
-    <div class="nav-right">
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-      </ul>
-      <button class="nav-button" type="button">Get started</button>
-    </div>
-  </nav>
-  <main>
+  <header class="hero">
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="logo" href="#" aria-label="My Website home">My Website</a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+        </ul>
+        <button class="nav-button" type="button">Get started</button>
+      </div>
+    </nav>
     <section class="banner" aria-labelledby="banner-heading">
       <h1 id="banner-heading">Welcome to My Website</h1>
       <p>Discover what we have to offer.</p>
     </section>
+  </header>
+  <main>
     <section class="card-row" aria-label="Featured topics">
       <article class="card">
         <h2>Getting Started</h2>
