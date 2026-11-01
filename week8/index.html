@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid</title>
+  <style>
+    .layout {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      grid-template-areas:
+        "head head"
+        "side main"
+        "foot foot";
+      gap: 16px;
+    }
+
+    .head {
+      grid-area: head;
+    }
+
+    .side {
+      grid-area: side;
+    }
+
+    .grid {
+      grid-area: main;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+    }
+
+    .foot {
+      grid-area: foot;
+    }
+
+    .grid-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 24px;
+      background: #dbeafe;
+      border-radius: 8px;
+      font: 600 1.25rem sans-serif;
+    }
+
+    .grid-icon {
+      font-size: 1.5rem;
+    }
+
+    .head,
+    .side,
+    .foot {
+      padding: 16px;
+      background: #f3f4f6;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "head"
+          "side"
+          "main"
+          "foot";
+      }
+    }
+  </style>
+</head>
+<body>
+    
+  <div class="layout">
+    <header class="head">Header</header>
+    <aside class="side">Sidebar</aside>
+    <main class="grid">
+      <div class="grid-item"><span class="grid-icon" aria-hidden="true">📄</span><span>One</span></div>
+      <div class="grid-item"><span class="grid-icon" aria-hidden="true">🖼️</span><span>Two</span></div>
+      <div class="grid-item"><span class="grid-icon" aria-hidden="true">📁</span><span>Three</span></div>
+      <div class="grid-item"><span class="grid-icon" aria-hidden="true">⚙️</span><span>Four</span></div>
+      <div class="grid-item"><span class="grid-icon" aria-hidden="true">🔔</span><span>Five</span></div>
+      <div class="grid-item"><span class="grid-icon" aria-hidden="true">👤</span><span>Six</span></div>
+    </main>
+    <footer class="foot">Footer</footer>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model</title>
+
+    <style>
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 30px;
+            color: #243447;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2457a7;
+        }
+
+        .box-model-card {
+            width: 300px;
+            background-color: #ffffff;
+            padding: 25px;
+            border: 5px solid #3478c9;
+            margin: 40px auto;
+            border-radius: 12px;
+        }
+
+        .box-model-card h2 {
+            margin-top: 0;
+            color: #2457a7;
+        }
+
+        .box-model-card p {
+            line-height: 1.6;
+        }
+
+        .box-model-instructions {
+            text-align: center;
+            color: #526579;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Box Model</h1>
+
+    <p class="box-model-instructions">
+        Inspect the card using browser DevTools.
+    </p>
+
+    <div class="box-model-card">
+        <h2>Box Model</h2>
+        <p>
+            Padding creates space inside the border.
+            Border surrounds the content and padding.
+            Margin creates space outside the border.
+        </p>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Colour Profile Cards</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px;
+            font-family: Arial, sans-serif;
+            background-color: #f1f5f9;
+        }
+
+      
+        .sticky-demo-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #2563eb;
+            color: white;
+            padding: 18px 25px;
+            font-size: 20px;
+        }
+
+        main {
+            padding: 25px;
+        }
+
+        .sticky-demo-card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border: 1px solid #cbd5e1;
+        }
+
+       
+        .sticky-demo-add-button {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            z-index: 2000;
+            width: 60px;
+            height: 60px;
+            border: none;
+            border-radius: 50%;
+            background: #16a34a;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px #0003;
+        }
+
+        .sticky-demo-add-button:hover {
+            background: #15803d;
+        }
+
+        h1 {
+            text-align: center;
+            color: #243b64;
+        }
+
+        .profile-card-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .profile-card {
+            width: 280px;
+            padding: 25px;
+            border: 2px solid #64748b;
+            border-radius: 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .profile-card-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid white;
+            outline: 2px solid #64748b;
+            object-fit: cover;
+        }
+
+        .profile-card h2 {
+            margin-bottom: 8px;
+        }
+
+        .profile-card p {
+            line-height: 1.5;
+        }
+
+        .profile-card-blue {
+            background-color: #dbeafe;
+            border-color: #2563eb;
+            color: #1e3a8a;
+        }
+
+        .profile-card-blue .profile-card-avatar {
+            outline-color: #2563eb;
+        }
+
+        .profile-card-pink {
+            background-color: #fce7f3;
+            border-color: #db2777;
+            color: #831843;
+        }
+
+        .profile-card-pink .profile-card-avatar {
+            outline-color: #db2777;
+        }
+
+        .bio-panel {
+    width: 300px;
+    height: 150px;
+    padding: 15px;
+    border: 2px solid #2563eb;
+    border-radius: 12px;
+    margin: 20px auto;
+    background-color: #dbeafe;
+    color: #1e3a8a;
+
+    
+    overflow: auto;
+}
+
+.bio-panel h2 {
+    margin-top: 0;
+}
+
+.bio-panel p {
+    line-height: 1.6;
+}
+
+
+        .site-demo-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 18px 25px;
+            background-color: #2563eb;
+            color: white;
+        }
+
+        .site-demo-title {
+            margin: 0;
+            font-size: 24px;
+        }
+
+     
+        .site-demo-content {
+            padding: 25px;
+        }
+
+        .site-demo-page-title {
+            text-align: center;
+        }
+
+      
+        .site-demo-card {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            background-color: white;
+        }
+
+        .site-demo-card-title {
+            margin-top: 0;
+            color: #2563eb;
+        }
+
+       
+        .site-demo-add-button {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            z-index: 2000;
+            width: 60px;
+            height: 60px;
+            border: none;
+            border-radius: 50%;
+            background-color: #16a34a;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+        }
+
+        .site-demo-add-button:hover {
+            background-color: #15803d;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Profile Cards</h1>
+
+    <div class="profile-card-list">
+
+        
+        <div class="profile-card profile-card-blue">
+            <img
+                class="profile-card-avatar"
+                src="https://placehold.co/200x200/2563eb/ffffff?text=User"
+                alt="Blue card profile avatar"
+            >
+            <h2>Blue Profile</h2>
+            <p>Learning HTML and CSS.</p>
+        </div>
+
+        
+        <div class="profile-card profile-card-pink">
+            <img
+                class="profile-card-avatar"
+                src="https://placehold.co/200x200/db2777/ffffff?text=User"
+                alt="Pink card profile avatar"
+            >
+            <h2>Pink Profile</h2>
+            <p>Practicing web design.</p>
+        </div>
+
+    </div>
+
+    <div class="bio-panel">
+    <h2>About Me</h2>
+    <p>
+        Hello! I am learning HTML and CSS.
+        I enjoy creating websites and designing
+        attractive profile cards.
+    </p>
+    <p>
+        I am practicing CSS properties such as
+        padding, margin, border, border-radius,
+        height and overflow.
+    </p>
+    <p>
+        My goal is to improve my web development
+        skills by building small projects every day.
+    </p>
+    <p>
+        I also enjoy learning new design techniques,
+        experimenting with colours and creating
+        responsive layouts for different devices.
+    </p>
+</div>
+
+<header class="sticky-demo-header">
+        My Website
+    </header>
+
+    <main>
+        <h1>Sticky and Fixed Position</h1>
+        <p>Scroll down to test the top bar and plus button.</p>
+
+        <div class="sticky-demo-card">
+            <h2>Card 1</h2>
+            <p>This is sample website content.</p>
+        </div>
+
+        <div class="sticky-demo-card">
+            <h2>Card 2</h2>
+            <p>The top bar stays at the top when scrolling.</p>
+        </div>
+
+        <div class="sticky-demo-card">
+            <h2>Card 3</h2>
+            <p>The plus button stays fixed at the bottom-right.</p>
+        </div>
+
+        <div class="sticky-demo-card">
+            <h2>Card 4</h2>
+            <p>Keep scrolling to test the sticky header.</p>
+        </div>
+
+        <div class="sticky-demo-card">
+            <h2>Card 5</h2>
+            <p>The z-index controls which element appears in front.</p>
+        </div>
+    </main>
+
+    <button class="sticky-demo-add-button" type="button" aria-label="Add item">
+        +
+    </button>
+    <header class="site-demo-header">
+        <h1 class="site-demo-title">My Website</h1>
+    </header>
+
+    <main class="site-demo-content">
+        <h2 class="site-demo-page-title">Welcome to My Website</h2>
+
+        <section class="site-demo-card">
+            <h3 class="site-demo-card-title">About Us</h3>
+            <p>This is the first content card.</p>
+        </section>
+
+        <section class="site-demo-card">
+            <h3 class="site-demo-card-title">Our Services</h3>
+            <p>This is the second content card.</p>
+        </section>
+
+        <section class="site-demo-card">
+            <h3 class="site-demo-card-title">Our Projects</h3>
+            <p>This is the third content card.</p>
+        </section>
+
+        <section class="site-demo-card">
+            <h3 class="site-demo-card-title">Contact Us</h3>
+            <p>This is the fourth content card.</p>
+        </section>
+    </main>
+
+    <button
+        class="site-demo-add-button"
+        type="button"
+        aria-label="Add item"
+    >+</button>
+</body>
+</html>
