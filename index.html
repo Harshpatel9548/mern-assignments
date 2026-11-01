@@ -381,6 +381,124 @@
         font-size: 11px;
       }
 
+      .profile-showcase {
+        margin-top: 40px;
+      }
+
+      .showcase-heading {
+        margin-bottom: 18px;
+      }
+
+      .showcase-heading h2 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(24px, 3vw, 34px);
+        font-weight: 500;
+        letter-spacing: -0.035em;
+      }
+
+      .showcase-heading p {
+        margin: 8px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .profile-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .profile-card {
+        --card-ink: #263d43;
+        --card-muted: #607575;
+        --card-accent: #477363;
+        --card-background: #fffefa;
+        --card-border: #dcded7;
+        --avatar-background: #dce9df;
+        display: flex;
+        min-height: 220px;
+        flex-direction: column;
+        padding: 24px;
+        border: 1px solid var(--card-border);
+        border-radius: 18px;
+        background: var(--card-background);
+        color: var(--card-ink);
+        box-shadow: 0 12px 30px rgb(23 42 53 / 6%);
+      }
+
+      .profile-card--clay {
+        --card-accent: #bb684d;
+        --card-background: #fffaf1;
+        --card-border: #e8cdb5;
+        --avatar-background: #f0d7b8;
+      }
+
+      .profile-card--lagoon {
+        --card-ink: #20394c;
+        --card-muted: #587080;
+        --card-accent: #347b78;
+        --card-background: #eff8f5;
+        --card-border: #c6dfd5;
+        --avatar-background: #c9e5d9;
+      }
+
+      .profile-card-top {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .avatar {
+        display: grid;
+        width: 58px;
+        height: 58px;
+        flex: 0 0 auto;
+        place-items: center;
+        border: 2px solid rgb(255 255 255 / 85%);
+        border-radius: 50%;
+        background: var(--avatar-background);
+        color: var(--card-accent);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 20px;
+        font-weight: 700;
+        box-shadow: 0 0 0 1px var(--card-border);
+      }
+
+      .profile-name {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 21px;
+        font-weight: 500;
+        letter-spacing: -0.025em;
+      }
+
+      .profile-role {
+        margin: 4px 0 0;
+        color: var(--card-muted);
+        font-size: 12px;
+      }
+
+      .profile-bio {
+        max-width: 390px;
+        margin: 20px 0;
+        color: var(--card-muted);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .profile-tag {
+        align-self: flex-start;
+        margin-top: auto;
+        padding: 7px 10px;
+        border: 1px solid var(--card-border);
+        border-radius: 999px;
+        color: var(--card-accent);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
       @media (max-width: 760px) {
         body {
           padding: 32px 16px;
@@ -401,6 +519,10 @@
 
         .stage {
           min-height: 310px;
+        }
+
+        .profile-grid {
+          grid-template-columns: 1fr;
         }
       }
 
@@ -494,6 +616,37 @@
             <span class="note-mark" aria-hidden="true">i</span>
             <span><strong>Border-box is on.</strong> The box's declared width includes its padding and border, so changing those layers doesn't make the box wider.</span>
           </div>
+        </div>
+      </section>
+
+      <section class="profile-showcase" aria-labelledby="profile-showcase-title">
+        <div class="showcase-heading">
+          <h2 id="profile-showcase-title">One card, two color stories.</h2>
+          <p>Same rounded, bordered profile card—remixed with two palettes.</p>
+        </div>
+        <div class="profile-grid">
+          <article class="profile-card profile-card--clay">
+            <div class="profile-card-top">
+              <div class="avatar" aria-label="Maya Chen initials">MC</div>
+              <div>
+                <h3 class="profile-name">Maya Chen</h3>
+                <p class="profile-role">Product designer</p>
+              </div>
+            </div>
+            <p class="profile-bio">Making thoughtful digital experiences, one small detail at a time.</p>
+            <span class="profile-tag">Warm clay</span>
+          </article>
+          <article class="profile-card profile-card--lagoon">
+            <div class="profile-card-top">
+              <div class="avatar" aria-label="Noah Rivera initials">NR</div>
+              <div>
+                <h3 class="profile-name">Noah Rivera</h3>
+                <p class="profile-role">Frontend developer</p>
+              </div>
+            </div>
+            <p class="profile-bio">Turning clean interfaces into fast, accessible experiences for everyone.</p>
+            <span class="profile-tag">Cool lagoon</span>
+          </article>
         </div>
       </section>
 
