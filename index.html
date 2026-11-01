@@ -35,11 +35,18 @@
     }
 
     .grid-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
       padding: 24px;
       background: #dbeafe;
       border-radius: 8px;
-      text-align: center;
       font: 600 1.25rem sans-serif;
+    }
+
+    .grid-icon {
+      font-size: 1.5rem;
     }
 
     .head,
@@ -67,12 +74,12 @@
     <header class="head">Header</header>
     <aside class="side">Sidebar</aside>
     <main class="grid">
-      <div class="grid-item">One</div>
-      <div class="grid-item">Two</div>
-      <div class="grid-item">Three</div>
-      <div class="grid-item">Four</div>
-      <div class="grid-item">Five</div>
-      <div class="grid-item">Six</div>
+      <div class="grid-item"><span class="grid-icon" aria-hidden="true">📄</span><span>One</span></div>
+      <div class="grid-item"><span class="grid-icon" aria-hidden="true">🖼️</span><span>Two</span></div>
+      <div class="grid-item"><span class="grid-icon" aria-hidden="true">📁</span><span>Three</span></div>
+      <div class="grid-item"><span class="grid-icon" aria-hidden="true">⚙️</span><span>Four</span></div>
+      <div class="grid-item"><span class="grid-icon" aria-hidden="true">🔔</span><span>Five</span></div>
+      <div class="grid-item"><span class="grid-icon" aria-hidden="true">👤</span><span>Six</span></div>
     </main>
     <footer class="foot">Footer</footer>
   </div>
