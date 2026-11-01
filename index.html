@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f2eb">
+    <title>The CSS Box Model — Interactive Lab</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #172a35;
+        background: #f5f2eb;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        --margin-size: 32px;
+        --border-size: 8px;
+        --padding-size: 28px;
+        --ink: #172a35;
+        --muted: #64737a;
+        --paper: #fffefa;
+        --margin-color: #f3c878;
+        --border-color: #e67b55;
+        --padding-color: #a7cfb9;
+        --content-color: #d7e9f1;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-width: 320px;
+        min-height: 100vh;
+        margin: 0;
+        padding: 48px 24px 40px;
+      }
+
+      main {
+        width: min(100%, 1120px);
+        margin: 0 auto;
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 18px;
+        color: #477363;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        width: 26px;
+        height: 2px;
+        background: currentColor;
+        content: "";
+      }
+
+      header {
+        max-width: 760px;
+        margin-bottom: 36px;
+      }
+
+      h1 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(42px, 6vw, 72px);
+        font-weight: 500;
+        letter-spacing: -0.055em;
+        line-height: 0.98;
+      }
+
+      .intro {
+        max-width: 580px;
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.65;
+      }
+
+      .lab {
+        display: grid;
+        grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.85fr);
+        overflow: hidden;
+        border: 1px solid #dcded7;
+        border-radius: 18px;
+        background: var(--paper);
+        box-shadow: 0 18px 50px rgb(23 42 53 / 8%);
+      }
+
+      .visual {
+        min-width: 0;
+        padding: 28px;
+        border-right: 1px solid #e5e6e0;
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+
+      .tag {
+        padding: 7px 10px;
+        border: 1px solid #d7e4dc;
+        border-radius: 999px;
+        background: #eff5f0;
+        color: #477363;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+      }
+
+      .stage {
+        position: relative;
+        display: grid;
+        min-height: 360px;
+        place-items: center;
+        overflow: hidden;
+        border: 1px dashed #d3b575;
+        border-radius: 12px;
+        background-color: #fff8e9;
+        background-image: radial-gradient(#dfc27e 0.8px, transparent 0.8px);
+        background-position: 8px 8px;
+        background-size: 16px 16px;
+      }
+
+      .margin-label {
+        position: absolute;
+        top: 13px;
+        left: 15px;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: #805a16;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+
+      .margin-label::before {
+        width: 9px;
+        height: 9px;
+        border-radius: 2px;
+        background: var(--margin-color);
+        content: "";
+      }
+
+      .demo-box {
+        display: grid;
+        width: min(68%, 470px);
+        min-width: 220px;
+        min-height: 190px;
+        margin: var(--margin-size);
+        padding: var(--padding-size);
+        border: var(--border-size) solid var(--border-color);
+        border-radius: 7px;
+        background: var(--padding-color);
+        box-shadow: 0 14px 28px rgb(72 53 24 / 13%);
+      }
+
+      .content-layer {
+        display: flex;
+        width: 100%;
+        min-height: 84px;
+        flex-direction: column;
+        justify-content: center;
+        padding: 14px 16px;
+        border-radius: 2px;
+        background: var(--content-color);
+        text-align: center;
+      }
+
+      .content-layer strong {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 21px;
+        font-weight: 500;
+      }
+
+      .content-layer span {
+        margin-top: 5px;
+        color: #58707b;
+        font-size: 11px;
+      }
+
+      .layer-label {
+        position: absolute;
+        z-index: 1;
+        padding: 5px 8px;
+        border: 1px solid rgb(23 42 53 / 12%);
+        border-radius: 5px;
+        background: rgb(255 254 250 / 94%);
+        color: var(--ink);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        line-height: 1;
+        pointer-events: none;
+      }
+
+      .legend {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+        margin: 17px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .legend li {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        min-width: 0;
+        color: #586971;
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .swatch {
+        width: 11px;
+        height: 11px;
+        flex: 0 0 auto;
+        border-radius: 3px;
+      }
+
+      .controls {
+        padding: 28px;
+      }
+
+      .controls-intro {
+        margin: 8px 0 26px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      .control {
+        margin-bottom: 24px;
+      }
+
+      .control-heading {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-bottom: 11px;
+      }
+
+      .control label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .control label span {
+        width: 10px;
+        height: 10px;
+        border-radius: 3px;
+      }
+
+      output {
+        color: #477363;
+        font-size: 12px;
+        font-variant-numeric: tabular-nums;
+        font-weight: 800;
+      }
+
+      input[type="range"] {
+        width: 100%;
+        height: 5px;
+        margin: 0;
+        appearance: none;
+        border-radius: 99px;
+        background: #e7e9e3;
+        cursor: pointer;
+      }
+
+      input[type="range"]::-webkit-slider-thumb {
+        width: 17px;
+        height: 17px;
+        appearance: none;
+        border: 3px solid var(--paper);
+        border-radius: 50%;
+        background: #477363;
+        box-shadow: 0 0 0 1px #477363;
+      }
+
+      input[type="range"]::-moz-range-thumb {
+        width: 12px;
+        height: 12px;
+        border: 3px solid var(--paper);
+        border-radius: 50%;
+        background: #477363;
+        box-shadow: 0 0 0 1px #477363;
+      }
+
+      input[type="range"]:focus-visible {
+        outline: 3px solid #9dbdaa;
+        outline-offset: 5px;
+      }
+
+      .reset {
+        width: 100%;
+        min-height: 42px;
+        margin-top: 1px;
+        border: 1px solid #d5ddd7;
+        border-radius: 7px;
+        background: transparent;
+        color: #365748;
+        cursor: pointer;
+        font: inherit;
+        font-size: 12px;
+        font-weight: 800;
+        transition: background 150ms ease, border-color 150ms ease;
+      }
+
+      .reset:hover {
+        border-color: #9dbdaa;
+        background: #f1f6f1;
+      }
+
+      .note {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        margin-top: 20px;
+        padding: 14px;
+        border-radius: 8px;
+        background: #f2f5f2;
+        color: #53645d;
+        font-size: 11px;
+        line-height: 1.55;
+      }
+
+      .note strong {
+        color: #365748;
+      }
+
+      .note-mark {
+        display: grid;
+        width: 20px;
+        height: 20px;
+        flex: 0 0 auto;
+        place-items: center;
+        border-radius: 50%;
+        background: #dce9df;
+        color: #477363;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        margin-top: 16px;
+        color: #7a8584;
+        font-size: 11px;
+      }
+
+      footer code {
+        color: #536b60;
+        font-size: 11px;
+      }
+
+      @media (max-width: 760px) {
+        body {
+          padding: 32px 16px;
+        }
+
+        header {
+          margin-bottom: 26px;
+        }
+
+        .lab {
+          grid-template-columns: 1fr;
+        }
+
+        .visual {
+          border-right: 0;
+          border-bottom: 1px solid #e5e6e0;
+        }
+
+        .stage {
+          min-height: 310px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .visual,
+        .controls {
+          padding: 20px;
+        }
+
+        .stage {
+          min-height: 270px;
+        }
+
+        .demo-box {
+          width: 74%;
+          min-width: 190px;
+        }
+
+        .legend {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          row-gap: 11px;
+        }
+
+        footer {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">CSS fundamentals · interactive lab</p>
+        <h1>Every element has a little space.</h1>
+        <p class="intro">The box model decides how that space adds up. Drag the controls and watch the margin, border, and padding reshape the box around its content.</p>
+      </header>
+
+      <section class="lab" aria-label="Interactive CSS box model">
+        <div class="visual">
+          <div class="section-heading">
+            <h2>THE BOX, FROM THE OUTSIDE IN</h2>
+            <span class="tag">LIVE PREVIEW</span>
+          </div>
+          <div class="stage">
+            <span class="margin-label">Margin · <span id="margin-stage-value">32px</span></span>
+            <div class="demo-box" aria-label="Preview box with margin, border, padding, and content">
+              <div class="content-layer">
+                <strong>Content</strong>
+                <span>width: 100% · border-box</span>
+              </div>
+            </div>
+          </div>
+          <ul class="legend" aria-label="Box model color key">
+            <li><span class="swatch" style="background:var(--margin-color)"></span>Margin</li>
+            <li><span class="swatch" style="background:var(--border-color)"></span>Border</li>
+            <li><span class="swatch" style="background:var(--padding-color)"></span>Padding</li>
+            <li><span class="swatch" style="background:var(--content-color)"></span>Content</li>
+          </ul>
+        </div>
+
+        <div class="controls">
+          <h2>MAKE IT YOURS</h2>
+          <p class="controls-intro">Adjust each layer. Notice how padding and border take space <em>inside</em> the fixed-width box, while margin creates space <em>outside</em> it.</p>
+
+          <div class="control">
+            <div class="control-heading">
+              <label for="margin-control"><span style="background:var(--margin-color)"></span>Margin</label>
+              <output id="margin-output" for="margin-control">32 px</output>
+            </div>
+            <input id="margin-control" type="range" min="8" max="56" step="4" value="32">
+          </div>
+
+          <div class="control">
+            <div class="control-heading">
+              <label for="border-control"><span style="background:var(--border-color)"></span>Border</label>
+              <output id="border-output" for="border-control">8 px</output>
+            </div>
+            <input id="border-control" type="range" min="2" max="20" step="2" value="8">
+          </div>
+
+          <div class="control">
+            <div class="control-heading">
+              <label for="padding-control"><span style="background:var(--padding-color)"></span>Padding</label>
+              <output id="padding-output" for="padding-control">28 px</output>
+            </div>
+            <input id="padding-control" type="range" min="8" max="48" step="4" value="28">
+          </div>
+
+          <button class="reset" type="button">Reset to the starting box</button>
+          <div class="note">
+            <span class="note-mark" aria-hidden="true">i</span>
+            <span><strong>Border-box is on.</strong> The box's declared width includes its padding and border, so changing those layers doesn't make the box wider.</span>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <span>One box. Four layers. No mystery.</span>
+        <code>* { box-sizing: border-box; }</code>
+      </footer>
+    </main>
+    <script>
+      const settings = [
+        { name: "margin", initial: 32, unit: "px" },
+        { name: "border", initial: 8, unit: "px" },
+        { name: "padding", initial: 28, unit: "px" }
+      ];
+
+      function updateControl({ name, unit }) {
+        const input = document.getElementById(`${name}-control`);
+        const output = document.getElementById(`${name}-output`);
+        const value = Number(input.value);
+
+        document.documentElement.style.setProperty(`--${name}-size`, `${value}${unit}`);
+        output.value = `${value} ${unit}`;
+        output.textContent = `${value} ${unit}`;
+
+        if (name === "margin") {
+          document.getElementById("margin-stage-value").textContent = `${value}${unit}`;
+        }
+      }
+
+      settings.forEach((setting) => {
+        const input = document.getElementById(`${setting.name}-control`);
+        input.addEventListener("input", () => updateControl(setting));
+      });
+
+      document.querySelector(".reset").addEventListener("click", () => {
+        settings.forEach((setting) => {
+          document.getElementById(`${setting.name}-control`).value = setting.initial;
+          updateControl(setting);
+        });
+      });
+    </script>
+  </body>
+</html>
