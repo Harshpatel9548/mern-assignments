@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid</title>
+  <style>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .grid-item {
+      padding: 24px;
+      background: #dbeafe;
+      border-radius: 8px;
+      text-align: center;
+      font: 600 1.25rem sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <main class="grid">
+    <div class="grid-item">One</div>
+    <div class="grid-item">Two</div>
+    <div class="grid-item">Three</div>
+    <div class="grid-item">Four</div>
+    <div class="grid-item">Five</div>
+    <div class="grid-item">Six</div>
+  </main>
+</body>
+</html>
