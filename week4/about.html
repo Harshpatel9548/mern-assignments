@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign up and share your contact preferences and message.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>About</title>
+</head>
+<body>
+
+  <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="register.html">Register</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <form>
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name">
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email">
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password">
+    </div>
+    <div>
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date">
+    </div>
+    <div>
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone">
+    </div>
+    <fieldset>
+      <legend>Preferred contact method</legend>
+      <div>
+        <input type="radio" id="contact-email" name="contact-method" value="email">
+        <label for="contact-email">Email</label>
+      </div>
+      <div>
+        <input type="radio" id="contact-phone" name="contact-method" value="phone">
+        <label for="contact-phone">Phone</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Updates</legend>
+      <div>
+        <input type="checkbox" id="email-updates" name="updates" value="email">
+        <label for="email-updates">Email updates</label>
+      </div>
+      <div>
+        <input type="checkbox" id="sms-updates" name="updates" value="sms">
+        <label for="sms-updates">SMS updates</label>
+      </div>
+    </fieldset>
+    <div>
+      <label for="referral">How did you hear about us?</label>
+      <select id="referral" name="referral">
+        <option value="">Select an option</option>
+        <option value="search">Search engine</option>
+        <option value="social">Social media</option>
+        <option value="friend">Friend or colleague</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+
+  <table>
+    <caption>Upcoming Events</caption>
+    <thead>
+      <tr>
+        <th scope="col">Event</th>
+        <th scope="col">Date</th>
+        <th scope="col">Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Community Meetup</td>
+        <td>8 november, 2026</td>
+        <td>diwali festival</td>
+      </tr>
+      <tr>
+        <td>Summer Workshop</td>
+        <td>14 november, 2026</td>
+        <td>childern day
+          
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3">2 upcoming events</td>
+      </tr>
+    </tfoot>
+  </table>
+
+</body>
+</html>
