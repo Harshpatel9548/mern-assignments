@@ -38,6 +38,93 @@
         padding: 48px 24px 40px;
       }
 
+      .topbar {
+        position: sticky;
+        z-index: 20;
+        top: 0;
+        margin: -48px -24px 34px;
+        padding: 12px 24px;
+        border-bottom: 1px solid rgb(220 222 215 / 85%);
+        background: rgb(245 242 235 / 94%);
+        backdrop-filter: blur(12px);
+      }
+
+      .topbar-inner {
+        display: flex;
+        width: min(100%, 1120px);
+        min-height: 32px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        margin: 0 auto;
+      }
+
+      .brand {
+        color: #365748;
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .topbar-links {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
+
+      .topbar-links a {
+        color: #53645d;
+        font-size: 12px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .topbar-links a:hover,
+      .topbar-links a:focus-visible {
+        color: #1d4434;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      .floating-add {
+        position: fixed;
+        z-index: 30;
+        right: 28px;
+        bottom: 28px;
+        display: grid;
+        width: 54px;
+        height: 54px;
+        place-items: center;
+        border: 0;
+        border-radius: 50%;
+        background: #477363;
+        color: #fffefa;
+        box-shadow: 0 8px 24px rgb(23 42 53 / 24%);
+        font: inherit;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 1;
+        text-decoration: none;
+        transition: background 150ms ease, transform 150ms ease;
+      }
+
+      .floating-add:hover {
+        transform: translateY(-2px);
+        background: #365748;
+      }
+
+      .floating-add:focus-visible {
+        outline: 3px solid #9dbdaa;
+        outline-offset: 4px;
+      }
+
+      #box-model,
+      #profile-showcase-title {
+        scroll-margin-top: 84px;
+      }
+
       main {
         width: min(100%, 1120px);
         margin: 0 auto;
@@ -510,6 +597,11 @@
           padding: 32px 16px;
         }
 
+        .topbar {
+          margin: -32px -16px 28px;
+          padding: 10px 16px;
+        }
+
         header {
           margin-bottom: 26px;
         }
@@ -533,6 +625,21 @@
       }
 
       @media (max-width: 480px) {
+        .topbar-links {
+          gap: 14px;
+        }
+
+        .topbar-links a {
+          font-size: 11px;
+        }
+
+        .floating-add {
+          right: 18px;
+          bottom: 18px;
+          width: 50px;
+          height: 50px;
+        }
+
         .visual,
         .controls {
           padding: 20px;
@@ -559,14 +666,25 @@
     </style>
   </head>
   <body>
+    <nav class="topbar" aria-label="Main navigation">
+      <div class="topbar-inner">
+        <a class="brand" href="#top">Box Model Studio</a>
+        <div class="topbar-links">
+          <a href="#box-model">Box model</a>
+          <a href="#profile-showcase-title">Profiles</a>
+        </div>
+      </div>
+    </nav>
+    <a class="floating-add" href="#profile-showcase-title" aria-label="Jump to profile cards" title="Jump to profile cards">+</a>
     <main>
+      <span id="top"></span>
       <header>
         <p class="eyebrow">CSS fundamentals · interactive lab</p>
         <h1>Every element has a little space.</h1>
         <p class="intro">The box model decides how that space adds up. Drag the controls and watch the margin, border, and padding reshape the box around its content.</p>
       </header>
 
-      <section class="lab" aria-label="Interactive CSS box model">
+      <section class="lab" id="box-model" aria-label="Interactive CSS box model">
         <div class="visual">
           <div class="section-heading">
             <h2>THE BOX, FROM THE OUTSIDE IN</h2>
