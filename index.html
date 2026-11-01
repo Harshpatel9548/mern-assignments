@@ -89,6 +89,34 @@
       color: #475569;
     }
 
+    .card-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .card {
+      flex: 1 1 200px;
+      padding: 1.5rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 5%);
+    }
+
+    .card h2 {
+      margin: 0 0 0.75rem;
+      color: #172554;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: #475569;
+      line-height: 1.5;
+    }
+
     @media (max-width: 600px) {
       .navbar {
         padding: 1rem;
@@ -120,6 +148,20 @@
     <section class="banner" aria-labelledby="banner-heading">
       <h1 id="banner-heading">Welcome to My Website</h1>
       <p>Discover what we have to offer.</p>
+    </section>
+    <section class="card-row" aria-label="Featured topics">
+      <article class="card">
+        <h2>Getting Started</h2>
+        <p>Find the essentials to help you get started.</p>
+      </article>
+      <article class="card">
+        <h2>Our Services</h2>
+        <p>Explore the services and resources available to you.</p>
+      </article>
+      <article class="card">
+        <h2>Learn More</h2>
+        <p>Discover more about what makes us unique.</p>
+      </article>
     </section>
   </main>
 </body>
