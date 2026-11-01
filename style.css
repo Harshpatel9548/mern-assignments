@@ -8,85 +8,141 @@ body {
     font-family: Arial, sans-serif;
     font-size: 1rem;
     background: #f4f4f4;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 1.5rem 3rem;
+    gap: 1rem;
+    padding: 1.25rem;
     background: #222;
     color: white;
 }
 
+.logo {
+    font-size: 1.5rem;
+}
+
 .nav-links {
     display: flex;
-    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
-}
-
-.hero {
-    text-align: center;
-    padding: 6rem 2rem;
-    background: #dcecff;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+    font-size: 1rem;
 }
 
 button {
-    padding: 0.8rem 1.5rem;
+    padding: 0.75rem 1.25rem;
     background: #007bff;
     color: white;
     border: none;
     border-radius: 0.3rem;
     font-size: 1rem;
+    cursor: pointer;
+}
+
+.hero {
+    text-align: center;
+    padding: 3rem 1.25rem;
+    background: #dcecff;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
 .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 1.25rem;
 }
 
 .card {
     background: white;
-    padding: 1.5rem;
+    padding: 1.25rem;
     text-align: center;
     border-radius: 0.6rem;
     box-shadow: 0 2px 8px #ccc;
 }
 
 .card img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    border-radius: 0.5rem;
     margin-bottom: 1rem;
 }
 
 .card h2 {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 1rem;
 }
 
 footer {
     background: #222;
     color: white;
     text-align: center;
-    padding: 1.5rem;
+    padding: 1.25rem;
+    font-size: 0.9rem;
 }
 
+@media (min-width: 768px) {
 
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .navbar {
+        padding: 1.5rem 3rem;
+    }
+
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1200px;
+        margin: auto;
+        padding: 2rem;
+    }
+
+    .hero {
+        padding: 6rem 2rem;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+}
