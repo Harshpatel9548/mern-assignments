@@ -38,7 +38,7 @@
         padding: 48px 24px 40px;
       }
 
-      .topbar {
+      .site-nav {
         position: sticky;
         z-index: 20;
         top: 0;
@@ -49,7 +49,7 @@
         backdrop-filter: blur(12px);
       }
 
-      .topbar-inner {
+      .site-nav__inner {
         display: flex;
         width: min(100%, 1120px);
         min-height: 32px;
@@ -59,7 +59,7 @@
         margin: 0 auto;
       }
 
-      .brand {
+      .site-nav__brand {
         color: #365748;
         font-size: 11px;
         font-weight: 900;
@@ -68,27 +68,27 @@
         text-transform: uppercase;
       }
 
-      .topbar-links {
+      .site-nav__links {
         display: flex;
         align-items: center;
         gap: 22px;
       }
 
-      .topbar-links a {
+      .site-nav__links a {
         color: #53645d;
         font-size: 12px;
         font-weight: 700;
         text-decoration: none;
       }
 
-      .topbar-links a:hover,
-      .topbar-links a:focus-visible {
+      .site-nav__links a:hover,
+      .site-nav__links a:focus-visible {
         color: #1d4434;
         text-decoration: underline;
         text-underline-offset: 4px;
       }
 
-      .floating-add {
+      .floating-action {
         position: fixed;
         z-index: 30;
         right: 28px;
@@ -110,12 +110,12 @@
         transition: background 150ms ease, transform 150ms ease;
       }
 
-      .floating-add:hover {
+      .floating-action:hover {
         transform: translateY(-2px);
         background: #365748;
       }
 
-      .floating-add:focus-visible {
+      .floating-action:focus-visible {
         outline: 3px solid #9dbdaa;
         outline-offset: 4px;
       }
@@ -130,7 +130,7 @@
         margin: 0 auto;
       }
 
-      .eyebrow {
+      .page-eyebrow {
         display: flex;
         align-items: center;
         gap: 10px;
@@ -142,7 +142,7 @@
         text-transform: uppercase;
       }
 
-      .eyebrow::before {
+      .page-eyebrow::before {
         width: 26px;
         height: 2px;
         background: currentColor;
@@ -163,7 +163,7 @@
         line-height: 0.98;
       }
 
-      .intro {
+      .page-intro {
         max-width: 580px;
         margin: 18px 0 0;
         color: var(--muted);
@@ -171,7 +171,7 @@
         line-height: 1.65;
       }
 
-      .lab {
+      .box-lab {
         display: grid;
         grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.85fr);
         overflow: hidden;
@@ -181,13 +181,13 @@
         box-shadow: 0 18px 50px rgb(23 42 53 / 8%);
       }
 
-      .visual {
+      .box-lab__visual {
         min-width: 0;
         padding: 28px;
         border-right: 1px solid #e5e6e0;
       }
 
-      .section-heading {
+      .box-lab__heading {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -202,7 +202,7 @@
         letter-spacing: 0.02em;
       }
 
-      .tag {
+      .status-tag {
         padding: 7px 10px;
         border: 1px solid #d7e4dc;
         border-radius: 999px;
@@ -213,7 +213,7 @@
         letter-spacing: 0.04em;
       }
 
-      .stage {
+      .box-stage {
         position: relative;
         display: grid;
         min-height: 360px;
@@ -227,7 +227,7 @@
         background-size: 16px 16px;
       }
 
-      .margin-label {
+      .box-stage__margin-label {
         position: absolute;
         top: 13px;
         left: 15px;
@@ -241,7 +241,7 @@
         text-transform: uppercase;
       }
 
-      .margin-label::before {
+      .box-stage__margin-label::before {
         width: 9px;
         height: 9px;
         border-radius: 2px;
@@ -249,7 +249,7 @@
         content: "";
       }
 
-      .demo-box {
+      .box-model {
         display: grid;
         width: min(68%, 470px);
         min-width: 220px;
@@ -262,7 +262,7 @@
         box-shadow: 0 14px 28px rgb(72 53 24 / 13%);
       }
 
-      .content-layer {
+      .box-model__content {
         display: flex;
         width: 100%;
         min-height: 84px;
@@ -274,34 +274,19 @@
         text-align: center;
       }
 
-      .content-layer strong {
+      .box-model__content strong {
         font-family: Georgia, "Times New Roman", serif;
         font-size: 21px;
         font-weight: 500;
       }
 
-      .content-layer span {
+      .box-model__content span {
         margin-top: 5px;
         color: #58707b;
         font-size: 11px;
       }
 
-      .layer-label {
-        position: absolute;
-        z-index: 1;
-        padding: 5px 8px;
-        border: 1px solid rgb(23 42 53 / 12%);
-        border-radius: 5px;
-        background: rgb(255 254 250 / 94%);
-        color: var(--ink);
-        font-size: 10px;
-        font-weight: 800;
-        letter-spacing: 0.04em;
-        line-height: 1;
-        pointer-events: none;
-      }
-
-      .legend {
+      .box-legend {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 8px;
@@ -310,7 +295,7 @@
         list-style: none;
       }
 
-      .legend li {
+      .box-legend li {
         display: flex;
         align-items: center;
         gap: 7px;
@@ -320,36 +305,36 @@
         font-weight: 700;
       }
 
-      .swatch {
+      .box-legend__swatch {
         width: 11px;
         height: 11px;
         flex: 0 0 auto;
         border-radius: 3px;
       }
 
-      .controls {
+      .box-controls {
         padding: 28px;
       }
 
-      .controls-intro {
+      .box-controls__intro {
         margin: 8px 0 26px;
         color: var(--muted);
         font-size: 13px;
         line-height: 1.55;
       }
 
-      .control {
+      .box-control {
         margin-bottom: 24px;
       }
 
-      .control-heading {
+      .box-control__heading {
         display: flex;
         align-items: baseline;
         justify-content: space-between;
         margin-bottom: 11px;
       }
 
-      .control label {
+      .box-control label {
         display: flex;
         align-items: center;
         gap: 8px;
@@ -357,7 +342,7 @@
         font-weight: 800;
       }
 
-      .control label span {
+      .box-control label span {
         width: 10px;
         height: 10px;
         border-radius: 3px;
@@ -404,7 +389,7 @@
         outline-offset: 5px;
       }
 
-      .reset {
+      .box-controls__reset {
         width: 100%;
         min-height: 42px;
         margin-top: 1px;
@@ -419,12 +404,12 @@
         transition: background 150ms ease, border-color 150ms ease;
       }
 
-      .reset:hover {
+      .box-controls__reset:hover {
         border-color: #9dbdaa;
         background: #f1f6f1;
       }
 
-      .note {
+      .info-note {
         display: flex;
         gap: 12px;
         align-items: flex-start;
@@ -437,11 +422,11 @@
         line-height: 1.55;
       }
 
-      .note strong {
+      .info-note strong {
         color: #365748;
       }
 
-      .note-mark {
+      .info-note__mark {
         display: grid;
         width: 20px;
         height: 20px;
@@ -472,18 +457,18 @@
         margin-top: 40px;
       }
 
-      .showcase-heading {
+      .profile-showcase__heading {
         margin-bottom: 18px;
       }
 
-      .showcase-heading h2 {
+      .profile-showcase__heading h2 {
         font-family: Georgia, "Times New Roman", serif;
         font-size: clamp(24px, 3vw, 34px);
         font-weight: 500;
         letter-spacing: -0.035em;
       }
 
-      .showcase-heading p {
+      .profile-showcase__heading p {
         margin: 8px 0 0;
         color: var(--muted);
         font-size: 13px;
@@ -529,13 +514,13 @@
         --avatar-background: #c9e5d9;
       }
 
-      .profile-card-top {
+      .profile-card__header {
         display: flex;
         align-items: center;
         gap: 15px;
       }
 
-      .avatar {
+      .profile-card__avatar {
         display: grid;
         width: 58px;
         height: 58px;
@@ -551,7 +536,7 @@
         box-shadow: 0 0 0 1px var(--card-border);
       }
 
-      .profile-name {
+      .profile-card__name {
         margin: 0;
         font-family: Georgia, "Times New Roman", serif;
         font-size: 21px;
@@ -559,13 +544,13 @@
         letter-spacing: -0.025em;
       }
 
-      .profile-role {
+      .profile-card__role {
         margin: 4px 0 0;
         color: var(--card-muted);
         font-size: 12px;
       }
 
-      .profile-bio {
+      .profile-card__bio {
         height: 76px;
         max-width: 390px;
         margin: 20px 0;
@@ -579,7 +564,7 @@
         line-height: 1.6;
       }
 
-      .profile-tag {
+      .profile-card__tag {
         align-self: flex-start;
         margin-top: auto;
         padding: 7px 10px;
@@ -597,7 +582,7 @@
           padding: 32px 16px;
         }
 
-        .topbar {
+        .site-nav {
           margin: -32px -16px 28px;
           padding: 10px 16px;
         }
@@ -606,16 +591,16 @@
           margin-bottom: 26px;
         }
 
-        .lab {
+        .box-lab {
           grid-template-columns: 1fr;
         }
 
-        .visual {
+        .box-lab__visual {
           border-right: 0;
           border-bottom: 1px solid #e5e6e0;
         }
 
-        .stage {
+        .box-stage {
           min-height: 310px;
         }
 
@@ -625,36 +610,36 @@
       }
 
       @media (max-width: 480px) {
-        .topbar-links {
+        .site-nav__links {
           gap: 14px;
         }
 
-        .topbar-links a {
+        .site-nav__links a {
           font-size: 11px;
         }
 
-        .floating-add {
+        .floating-action {
           right: 18px;
           bottom: 18px;
           width: 50px;
           height: 50px;
         }
 
-        .visual,
-        .controls {
+        .box-lab__visual,
+        .box-controls {
           padding: 20px;
         }
 
-        .stage {
+        .box-stage {
           min-height: 270px;
         }
 
-        .demo-box {
+        .box-model {
           width: 74%;
           min-width: 190px;
         }
 
-        .legend {
+        .box-legend {
           grid-template-columns: repeat(2, minmax(0, 1fr));
           row-gap: 11px;
         }
@@ -666,110 +651,110 @@
     </style>
   </head>
   <body>
-    <nav class="topbar" aria-label="Main navigation">
-      <div class="topbar-inner">
-        <a class="brand" href="#top">Box Model Studio</a>
-        <div class="topbar-links">
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="site-nav__inner">
+        <a class="site-nav__brand" href="#top">Box Model Studio</a>
+        <div class="site-nav__links">
           <a href="#box-model">Box model</a>
           <a href="#profile-showcase-title">Profiles</a>
         </div>
       </div>
     </nav>
-    <a class="floating-add" href="#profile-showcase-title" aria-label="Jump to profile cards" title="Jump to profile cards">+</a>
+    <a class="floating-action" href="#profile-showcase-title" aria-label="Jump to profile cards" title="Jump to profile cards">+</a>
     <main>
       <span id="top"></span>
       <header>
-        <p class="eyebrow">CSS fundamentals · interactive lab</p>
+        <p class="page-eyebrow">CSS fundamentals · interactive lab</p>
         <h1>Every element has a little space.</h1>
-        <p class="intro">The box model decides how that space adds up. Drag the controls and watch the margin, border, and padding reshape the box around its content.</p>
+        <p class="page-intro">The box model decides how that space adds up. Drag the controls and watch the margin, border, and padding reshape the box around its content.</p>
       </header>
 
-      <section class="lab" id="box-model" aria-label="Interactive CSS box model">
-        <div class="visual">
-          <div class="section-heading">
+      <section class="box-lab" id="box-model" aria-label="Interactive CSS box model">
+        <div class="box-lab__visual">
+          <div class="box-lab__heading">
             <h2>THE BOX, FROM THE OUTSIDE IN</h2>
-            <span class="tag">LIVE PREVIEW</span>
+            <span class="status-tag">LIVE PREVIEW</span>
           </div>
-          <div class="stage">
-            <span class="margin-label">Margin · <span id="margin-stage-value">32px</span></span>
-            <div class="demo-box" aria-label="Preview box with margin, border, padding, and content">
-              <div class="content-layer">
+          <div class="box-stage">
+            <span class="box-stage__margin-label">Margin · <span id="margin-stage-value">32px</span></span>
+            <div class="box-model" aria-label="Preview box with margin, border, padding, and content">
+              <div class="box-model__content">
                 <strong>Content</strong>
                 <span>width: 100% · border-box</span>
               </div>
             </div>
           </div>
-          <ul class="legend" aria-label="Box model color key">
-            <li><span class="swatch" style="background:var(--margin-color)"></span>Margin</li>
-            <li><span class="swatch" style="background:var(--border-color)"></span>Border</li>
-            <li><span class="swatch" style="background:var(--padding-color)"></span>Padding</li>
-            <li><span class="swatch" style="background:var(--content-color)"></span>Content</li>
+          <ul class="box-legend" aria-label="Box model color key">
+            <li><span class="box-legend__swatch" style="background:var(--margin-color)"></span>Margin</li>
+            <li><span class="box-legend__swatch" style="background:var(--border-color)"></span>Border</li>
+            <li><span class="box-legend__swatch" style="background:var(--padding-color)"></span>Padding</li>
+            <li><span class="box-legend__swatch" style="background:var(--content-color)"></span>Content</li>
           </ul>
         </div>
 
-        <div class="controls">
+        <div class="box-controls">
           <h2>MAKE IT YOURS</h2>
-          <p class="controls-intro">Adjust each layer. Notice how padding and border take space <em>inside</em> the fixed-width box, while margin creates space <em>outside</em> it.</p>
+          <p class="box-controls__intro">Adjust each layer. Notice how padding and border take space <em>inside</em> the fixed-width box, while margin creates space <em>outside</em> it.</p>
 
-          <div class="control">
-            <div class="control-heading">
+          <div class="box-control">
+            <div class="box-control__heading">
               <label for="margin-control"><span style="background:var(--margin-color)"></span>Margin</label>
               <output id="margin-output" for="margin-control">32 px</output>
             </div>
             <input id="margin-control" type="range" min="8" max="56" step="4" value="32">
           </div>
 
-          <div class="control">
-            <div class="control-heading">
+          <div class="box-control">
+            <div class="box-control__heading">
               <label for="border-control"><span style="background:var(--border-color)"></span>Border</label>
               <output id="border-output" for="border-control">8 px</output>
             </div>
             <input id="border-control" type="range" min="2" max="20" step="2" value="8">
           </div>
 
-          <div class="control">
-            <div class="control-heading">
+          <div class="box-control">
+            <div class="box-control__heading">
               <label for="padding-control"><span style="background:var(--padding-color)"></span>Padding</label>
               <output id="padding-output" for="padding-control">28 px</output>
             </div>
             <input id="padding-control" type="range" min="8" max="48" step="4" value="28">
           </div>
 
-          <button class="reset" type="button">Reset to the starting box</button>
-          <div class="note">
-            <span class="note-mark" aria-hidden="true">i</span>
+          <button class="box-controls__reset" type="button">Reset to the starting box</button>
+          <div class="info-note">
+            <span class="info-note__mark" aria-hidden="true">i</span>
             <span><strong>Border-box is on.</strong> The box's declared width includes its padding and border, so changing those layers doesn't make the box wider.</span>
           </div>
         </div>
       </section>
 
       <section class="profile-showcase" aria-labelledby="profile-showcase-title">
-        <div class="showcase-heading">
+        <div class="profile-showcase__heading">
           <h2 id="profile-showcase-title">One card, two color stories.</h2>
           <p>Same rounded, bordered profile card—remixed with two palettes.</p>
         </div>
         <div class="profile-grid">
           <article class="profile-card profile-card--clay">
-            <div class="profile-card-top">
-              <div class="avatar" aria-label="Maya Chen initials">MC</div>
+            <div class="profile-card__header">
+              <div class="profile-card__avatar" aria-label="Maya Chen initials">MC</div>
               <div>
-                <h3 class="profile-name">Maya Chen</h3>
-                <p class="profile-role">Product designer</p>
+                <h3 class="profile-card__name">Maya Chen</h3>
+                <p class="profile-card__role">Product designer</p>
               </div>
             </div>
-            <p class="profile-bio">Making thoughtful digital experiences, one small detail at a time. Maya loves turning complex ideas into clear, welcoming interfaces. Her process blends careful research, playful sketches, and close collaboration with the people who use what she designs.</p>
-            <span class="profile-tag">Warm clay</span>
+            <p class="profile-card__bio">Making thoughtful digital experiences, one small detail at a time. Maya loves turning complex ideas into clear, welcoming interfaces. Her process blends careful research, playful sketches, and close collaboration with the people who use what she designs.</p>
+            <span class="profile-card__tag">Warm clay</span>
           </article>
           <article class="profile-card profile-card--lagoon">
-            <div class="profile-card-top">
-              <div class="avatar" aria-label="Noah Rivera initials">NR</div>
+            <div class="profile-card__header">
+              <div class="profile-card__avatar" aria-label="Noah Rivera initials">NR</div>
               <div>
-                <h3 class="profile-name">Noah Rivera</h3>
-                <p class="profile-role">Frontend developer</p>
+                <h3 class="profile-card__name">Noah Rivera</h3>
+                <p class="profile-card__role">Frontend developer</p>
               </div>
             </div>
-            <p class="profile-bio">Turning clean interfaces into fast, accessible experiences for everyone. Noah enjoys building reliable design systems and polishing the little interactions that make a product feel intuitive. Away from the keyboard, he is usually out exploring a new trail.</p>
-            <span class="profile-tag">Cool lagoon</span>
+            <p class="profile-card__bio">Turning clean interfaces into fast, accessible experiences for everyone. Noah enjoys building reliable design systems and polishing the little interactions that make a product feel intuitive. Away from the keyboard, he is usually out exploring a new trail.</p>
+            <span class="profile-card__tag">Cool lagoon</span>
           </article>
         </div>
       </section>
@@ -805,7 +790,7 @@
         input.addEventListener("input", () => updateControl(setting));
       });
 
-      document.querySelector(".reset").addEventListener("click", () => {
+      document.querySelector(".box-controls__reset").addEventListener("click", () => {
         settings.forEach((setting) => {
           document.getElementById(`${setting.name}-control`).value = setting.initial;
           updateControl(setting);
